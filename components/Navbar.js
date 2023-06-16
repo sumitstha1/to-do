@@ -1,8 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { isAuthenticated } from '../src/utils/auth'
 
 const Navbar = () => {
+
+
     return (
         <div className='h-[8vh] flex justify-between items-center w-[100vw]'>
             <nav className='navbar flex items-center justify-between h-[100%] w-[100%]'>
@@ -13,12 +16,30 @@ const Navbar = () => {
                     </div>
                 </Link>
                 <div className="auth">
-                    <Link href={"/user/login"}><button className='hover:text-purple-400 md:text-lg text-sm'>Login</button></Link>
-                    <Link href={"/user/signup"}><button className='inline-flex text-white bg-purple-500 border-0 md:py-2 md:px-6 py-1 px-2 focus:outline-none hover:bg-purple-600 rounded md:text-lg text-sm mx-4 my-4'>Register</button></Link>
+                    <AuthBtn />
                 </div>
             </nav>
         </div>
     )
+}
+
+
+const AuthBtn = () => {
+
+    const loggedIn = isAuthenticated();
+
+    if (loggedIn) {
+        return <>
+            <Link href={"/user/logout"}><button className='hover:text-purple-400 md:text-lg text-sm'>Logout</button></Link>
+            <Link href={"/user/logout"}><button className='inline-flex text-white bg-purple-500 border-0 md:py-2 md:px-6 py-1 px-2 focus:outline-none hover:bg-purple-600 rounded md:text-lg text-sm mx-4 my-4'>Setting</button></Link>
+        </>
+    }
+    else {
+        return <>
+            <Link href={"/user/login"}><button className='hover:text-purple-400 md:text-lg text-sm'>Login</button></Link>
+            <Link href={"/user/signup"}><button className='inline-flex text-white bg-purple-500 border-0 md:py-2 md:px-6 py-1 px-2 focus:outline-none hover:bg-purple-600 rounded md:text-lg text-sm mx-4 my-4'>Register</button></Link>
+        </>
+    }
 }
 
 export default Navbar

@@ -25,11 +25,11 @@ export default function Home() {
               Let us remind you what to-do
             </h1>
             <p className='md:text-base text-sm text-center md:text-left'>
-              We have a lot of work to day day by day and sometimes we cant remember what we had planned to do. so here is "Brand Name" for your service. "Brand Name" provides you a space for writing down the activities and tasks you had planned to do.
+              We have a lot of work to do day by day and sometimes we cant remember what we had planned to do. so here is To-Do Brand for your service. To-Do Brand provides you a space for writing down the activities and tasks you had planned to do.
             </p>
           </div>
           <div className='h-1/2 flex md:items-center md:justify-start justify-center md:my-0 my-4'>
-            <Link href={"/user/login"} className='inline-flex text-white bg-purple-500 border-0 md:py-2 md:px-6 py-1 px-2 focus:outline-none hover:bg-purple-600 rounded-full md:text-lg text-sm mx-4 my-4 h-10 w-40 justify-between items-center'>
+            <Link href={"/todo"} className='inline-flex text-white bg-purple-500 border-0 md:py-2 md:px-6 py-1 px-2 focus:outline-none hover:bg-purple-600 rounded-full md:text-lg text-sm mx-4 my-4 h-10 w-40 justify-between items-center'>
               Get started
               <span>
                 <BsArrowRight />
